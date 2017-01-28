@@ -1,4 +1,4 @@
 # main.py -- put your code here!
-import display_test
+import UI
 
-display_test.run_test()
+UI.run_test()
