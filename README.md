@@ -1,6 +1,6 @@
 # Standing-Desk-OS
 
-My Operating System for the IKEA electric standing desk "BEKANT", powerd by MicroPython
+My Operating System for the IKEA electric standing desk *BEKANT*, written in MicroPython
 
 
 ## Intention / Goals
