@@ -23,3 +23,5 @@ This project is currently based on the following hardware:
 * [The LCD160CR OLED touch display](https://docs.micropython.org/en/latest/pyboard/library/lcd160cr.html)
 * [A Sharp GP2Y0A02YK0F distance sensor](https://www.sharpsde.com/products/optoelectronic-components/model/GP2Y0A02YK0F) - for distance measurements of 20cm - 150cm
 * Obviously, the [IKEA BEKANT electric standing desk](http://www.ikea.com/de/de/catalog/products/S69022537/)
+
+Consider buying stuff in the [official shop]https://store.micropython.org/#/store() to support the project. The Board and the Display can be bought there.

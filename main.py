@@ -1,4 +1,5 @@
 # main.py -- put your code here!
-import UI
+import Display.Display
 
-UI.run_test()
+d = Display.Display.Display()
+
