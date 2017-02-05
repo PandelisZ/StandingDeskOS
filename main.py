@@ -1,7 +1,11 @@
 # main.py -- put your code here!
-import Display
+import display, sensors
 
-config = {'orientation': 'X'}
+config = {
+    'orientation': 'X',
+    'connected_pin': 'Y11'}
 
-d = Display.Display(config)
+d = display.Display(config)
 d.write('Hi Boss :)')
+
+s = sensors.GP2Y0A02YK0F(config)
