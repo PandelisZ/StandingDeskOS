@@ -8,6 +8,9 @@ config = {
 
 d = display.Display(config)
 s = sensors.GP2Y0A02YK0F(config)
+sw = pyb.Switch()
+
+sw.callback(d.toggle_display)
 
 while True:
     d.get_touch()

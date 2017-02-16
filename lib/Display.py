@@ -8,15 +8,25 @@ class Display():
         'white': 65535}
 
     def __init__(self, config):
+        if not hasattr(self, 'config'):
+            self.config = config
         self.lcd = lcd160cr.LCD160CR(config['orientation'])
         self.lcd.erase()
         self.lcd.set_pen(self.colo['white'], self.colo['black'])
         self.lcd.set_text_color(self.colo['white'], self.colo['black'])
         self.lcd.set_orient(lcd160cr.LANDSCAPE)
         self.lcd.set_font(1)
+        self.lcd.set_brightness(14)
         self.h_half = round(self.lcd.h/2)
         self.w_half = round(self.lcd.w/2)
         self.draw_menu()
+
+    def lcd_is_on(self):
+        if self.lcd.pwr():
+            return True
+        else:
+            return False
+
 
     def draw_menu(self):
         # self.write('W:{} x H:{} -> Disp. Size'.format(self.lcd.w, self.lcd.h))
@@ -38,5 +48,17 @@ class Display():
         self.lcd.write(text+'   ')
 
     def get_touch(self):
-        coords = self.lcd.get_touch()
-        self.write('Touched:{} at x:{} y:{}\n'.format(coords[0], coords[1], coords[2]))
+        if self.lcd_is_on():
+            coords = self.lcd.get_touch()
+            self.write('Touched:{} at x:{} y:{}\n'.format(
+                coords[0],
+                coords[1],
+                coords[2]))
+
+    def toggle_display(self):
+        if self.lcd_is_on():
+            self.lcd.pwr(0)
+        else:
+            self.lcd.pwr(1)
+            self.__init__(self.config)
+            self.get_touch()
