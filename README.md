@@ -6,7 +6,7 @@ My Operating System for the IKEA electric standing desk *BEKANT*, written in Mic
 ## Intention / Goals
 
 I want to improve the standing desk by enabling it ro arrive at certain heights,
-automatically. The desk should then be able to meassure it's current height
+automatically. The desk should then be able to measure it's current height
 and set a direction on it's own. When it reaches certain heights, it should act accordingly. Thresholds could be
 
 * Maximum or minimum heights
