@@ -36,6 +36,9 @@ def get_changed_files():
     files = git_result.stdout.splitlines()
     for file in files:
         changed_files.append(file.strip().split(maxsplit=1)[1])
+    if len(changed_files) == 0:
+        print('No changed files')
+        sys.exit(3)
     return changed_files
 
 
