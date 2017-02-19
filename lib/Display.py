@@ -1,4 +1,7 @@
 import lcd160cr
+import micropython
+
+micropython.alloc_emergency_exception_buf(100)
 
 
 class Display():
@@ -26,7 +29,6 @@ class Display():
             return True
         else:
             return False
-
 
     def draw_menu(self):
         # self.write('W:{} x H:{} -> Disp. Size'.format(self.lcd.w, self.lcd.h))
@@ -60,5 +62,3 @@ class Display():
             self.lcd.pwr(0)
         else:
             self.lcd.pwr(1)
-            self.__init__(self.config)
-            self.get_touch()
