@@ -1,5 +1,6 @@
 # main.py -- put your code here!
-import display, sensors
+import display
+import sensors
 import pyb
 
 config = {

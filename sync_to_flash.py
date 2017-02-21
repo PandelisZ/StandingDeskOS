@@ -14,7 +14,10 @@ def ensure_right_os():
 
 def get_mountpoint():
     mounted = False
-    mount_result = subprocess.run(['mount'], stdout=subprocess.PIPE, encoding='UTF-8')
+    mount_result = subprocess.run(
+        ['mount'],
+        stdout=subprocess.PIPE,
+        encoding='UTF-8')
     mounts = mount_result.stdout.splitlines()
     for mount in mounts:
         if 'PYBFLASH' in mount:
